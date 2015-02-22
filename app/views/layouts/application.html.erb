@@ -8,6 +8,43 @@
 </head>
 <body>
 
+
+<% if user_signed_in? %>
+
+  Signed in as <%= current_user.email %>
+  <ul class="">
+    <li>
+      <%= link_to edit_user_registration_path, class: "" do %>
+        <span>Edit&nbsp;Profile</span>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to destroy_user_session_path, :method => :delete, class: "" do %>
+        <span>Log&nbsp;out</span>
+      <% end %>
+    </li>
+  </ul>
+
+<% else %>
+
+  <div class="">
+    <%= form_for(:user, :as => :user, :url => session_path(:user), :html => {:class => ""}) do |f| %>
+      <%= f.label :email, "Email:" %>
+      <%= f.text_field :email, :placeholder => "Email", class: "form-control" %>
+      <%= f.label :password, "Password:" %>
+      <%= f.password_field :password, :placeholder => "Password", class: "form-control" %>
+      <%= f.submit 'Log in', class: "" %>
+    <% end %>
+
+  <%= link_to 'Register', new_user_registration_path, class: "logInGroup" %>
+
+<% end %>
+
+<div>
+  <%= link_to 'Home', root_path, class: "" %>
+</div>
+
+
 <%= yield %>
 
 </body>

@@ -1,0 +1,22 @@
+LET`s SHARE THIS TASK, yo!
+<br />
+<%= @task.title %><br />
+<%= @task.description %><br />
+<%= @task.users[0].email %><br />
+<p>Lets find users: </p>
+  <% @users.each do |user| %>
+    <%= user.email %> <br />
+  <% end %>
+<br />
+
+<%= form_for :task, url: task_share_path, method: :put do |f| %>
+  <p>
+    <%= f.label :owners %><br>
+    <%= f.collection_select(:owners, @users, :email, :email) %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+

@@ -1,0 +1,14 @@
+
+<%= @task.title %><br />
+<%= @task.description %><br />
+<%= @task.owners %><br />
+Owners:
+  <% @task.owners.each do |owner| %>
+    <%= owner %>
+  <% end %><br />
+
+<%= link_to 'Edit', edit_task_path %>
+<br>
+<%= link_to 'Home', tasks_path %>
+<br>
+<%= link_to 'Share', task_share_path %>

@@ -1,4 +1,15 @@
 Rails.application.routes.draw do
+  devise_for :users
+
+  root 'start#index'
+
+  resources :tasks
+
+  get '/tasks/:id/share', :controller => 'tasks', :action => 'go_share',  :as => 'task_share'
+  put '/tasks/:id/share', :controller => 'tasks', :action => 'share'
+
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
