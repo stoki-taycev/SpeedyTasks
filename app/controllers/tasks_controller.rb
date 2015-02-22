@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
+  before_action :check_owner, only: [:show, :edit, :go_share]
 
   def index
     @tasks = Task.all
@@ -59,6 +60,18 @@ class TasksController < ApplicationController
 
   def task_params
     params.require(:task).permit(:title, :description, :deadline, :owners)
+  end
+
+  def check_owner
+    @task = Task.find(params[:id])
+    @task.owners.each do |owner|
+      if owner == current_user.email.to_s
+        return true
+      else
+        redirect_to tasks_path
+        return
+      end
+    end
   end
 
 end
