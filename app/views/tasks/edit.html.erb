@@ -3,12 +3,12 @@
 <%= form_for :task, url: task_path, method: :put do |f| %>
   <p>
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, value: @task.title %>
   </p>
 
   <p>
     <%= f.label :description %><br>
-    <%= f.text_area :description %>
+    <%= f.text_area :description, value: @task.description %>
   </p>
 
   <p>

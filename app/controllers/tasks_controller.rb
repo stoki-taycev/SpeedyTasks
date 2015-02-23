@@ -25,7 +25,7 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.new
+    @task = Task.find(params[:id])
   end
 
   def update
@@ -48,10 +48,18 @@ class TasksController < ApplicationController
   def share
     @users = User.all
     @task = Task.find(params[:id])
-    @task.owners.push(params[:task][:owners])
-    @task.save
-    @task.add_user @users.find_by(:email => (params[:task][:owners]))
-    redirect_to @task
+    @task.owners.each do |owner|
+      if owner == params[:task][:owners]
+        redirect_to @task
+        return
+      else
+        @task.owners.push(params[:task][:owners])
+        @task.save
+        @task.add_user @users.find_by(:email => (params[:task][:owners]))
+        redirect_to @task
+        return
+      end
+    end
   end
 
 
@@ -64,13 +72,11 @@ class TasksController < ApplicationController
 
   def check_owner
     @task = Task.find(params[:id])
-    @task.owners.each do |owner|
-      if owner == current_user.email.to_s
-        return true
-      else
-        redirect_to tasks_path
-        return
-      end
+    if @task.owners.include?(current_user.email.to_s)
+      return true
+    else
+      redirect_to tasks_path
+      return
     end
   end
 
