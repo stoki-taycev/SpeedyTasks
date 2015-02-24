@@ -36,13 +36,13 @@ class TasksController < ApplicationController
   def update
     @task = Task.find(params[:id])
     @task.update(task_params)
-    redirect_to @task
+    redirect_to tasks_path
   end
 
   def destroy
     @task = Task.find(params[:id])
     @task.destroy
-    redirect_to @task
+    redirect_to tasks_path
   end
 
   def go_share
@@ -54,13 +54,13 @@ class TasksController < ApplicationController
     @users = User.all
     @task = Task.find(params[:id])
     if @task.owners.include?(params[:task][:owners])
-      redirect_to @task
+      redirect_to tasks_path
       return
     else
       @task.owners.push(params[:task][:owners])
       @task.save
       @task.add_user @users.find_by(:email => (params[:task][:owners]))
-      redirect_to @task
+      redirect_to tasks_path
       return
     end
   end

@@ -51,19 +51,3 @@
   </div>
 <% end %>
 
-<% content_for :index do %>
-  <script type="text/javascript">
-    $(document).ready(function () {
-        setInterval(function(){
-        refreshIndex();
-      }, 7000);
-    });
-
-    function refreshIndex() {
-      $.ajax({
-        url: "<%= @tasks %>",
-        dataType: "script"
-      })
-    };
-  </script>
-<% end %>
