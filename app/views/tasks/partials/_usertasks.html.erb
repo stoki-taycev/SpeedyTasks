@@ -35,7 +35,7 @@
     <div class="panel-footer">
       <div class="row">
         <div class="col-xs-10">
-          <% task.owners.each do |owner| %>
+          <% task.owners.uniq.each do |owner| %>
             <span class="glyphicon glyphicon-user" aria-hidden="true"><span class="owner-email"> <%= owner %></span></span>
           <% end %>
         </div>

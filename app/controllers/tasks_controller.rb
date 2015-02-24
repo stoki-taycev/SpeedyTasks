@@ -49,17 +49,15 @@ class TasksController < ApplicationController
   def share
     @users = User.all
     @task = Task.find(params[:id])
-    @task.owners.each do |owner|
-      if owner == params[:task][:owners]
-        redirect_to @task
-        return
-      else
-        @task.owners.push(params[:task][:owners])
-        @task.save
-        @task.add_user @users.find_by(:email => (params[:task][:owners]))
-        redirect_to @task
-        return
-      end
+    if @task.owners.include?(params[:task][:owners])
+      redirect_to @task
+      return
+    else
+      @task.owners.push(params[:task][:owners])
+      @task.save
+      @task.add_user @users.find_by(:email => (params[:task][:owners]))
+      redirect_to @task
+      return
     end
   end
 
