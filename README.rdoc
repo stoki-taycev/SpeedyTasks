@@ -1,3 +1,3 @@
 SpeedyTasks - simple task manager application developed by Anton Udyrenko.
 
-Users can register/login to system, create and manege their tasks. Also they can share each task with other registered users who will be also able to manage it afterwards.
+Users can register/login to system, create and manage their tasks. Also they can share each task with other registered users who will be also able to manage it afterwards.
