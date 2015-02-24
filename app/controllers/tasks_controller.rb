@@ -6,6 +6,10 @@ class TasksController < ApplicationController
     @tasks = Task.all
     @new_task = Task.new
     @users = User.all
+    respond_to do |format|
+      format.html { render :action => 'index' }
+      format.js {render :action => "index.js.erb"}
+    end
   end
 
   def show
