@@ -1,3 +1,25 @@
 SpeedyTasks - simple task manager application developed by Anton Udyrenko.
 
 Users can register/login to system, create and manage their tasks. Also they can share each task with other registered users who will be also able to manage it afterwards.
+
+
+
+
+
+
+Please note, that this project is based on Ruby on Rails 4.2
+http://edgeguides.rubyonrails.org/4_2_release_notes.html
+
+For this reason, to avoid problems with server starting, to file 'config/boot.rb' was added next snippet of code:
+
+require 'rubygems'
+require 'rails/commands/server'
+
+module Rails
+  class Server
+    alias :default_options_alias :default_options
+    def default_options
+      default_options_alias.merge!(:Host => '0.0.0.0')
+    end
+  end
+end
