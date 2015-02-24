@@ -3,9 +3,9 @@ class Task < ActiveRecord::Base
 
   serialize :owners, Array
 
+  validates :title, presence: true
 
   def add_user new_user
     self.users << new_user
   end
-
 end

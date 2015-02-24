@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   before_action :authenticate_user!
   before_action :check_owner, only: [:show, :edit, :go_share]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def index
     @tasks = Task.all
@@ -14,7 +15,6 @@ class TasksController < ApplicationController
 
   def show
     @task = Task.find(params[:id])
-
   end
 
   def new
@@ -23,10 +23,14 @@ class TasksController < ApplicationController
 
   def create
     @task = Task.new(task_params)
-    @task.owners.push(current_user.email)
-    @task.save
-    @task.add_user current_user
-    redirect_to tasks_path
+    if @task.valid?
+      @task.owners.push(current_user.email)
+      @task.save
+      @task.add_user current_user
+      redirect_to tasks_path
+    else
+      redirect_to tasks_path
+    end
   end
 
   def edit
@@ -81,6 +85,10 @@ class TasksController < ApplicationController
       redirect_to tasks_path
       return
     end
+  end
+
+  def record_not_found
+    redirect_to tasks_path
   end
 
 end

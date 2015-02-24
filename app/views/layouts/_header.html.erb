@@ -1,17 +1,14 @@
 <div class="navbar navbar-inverse navbar-top">
   <div class="row">
   <div class="container">
-    <div class="col-xs-4 logo">
+    <div class="col-xs-5 logo">
       <%= link_to root_path do %>
         <%= image_tag("logo.png") %>&nbsp;<span>SpeedyTasks</span>
       <% end %>
     </div>
-
-    <div class="col-xs-4">
-
+    <div class="col-xs-2">
     </div>
-
-    <div class="col-xs-4">
+    <div class="col-xs-5">
       <% if user_signed_in? %>
         <div class="headerUserBar">
           <ul class="nav navbar-nav navbar-right">
@@ -41,8 +38,6 @@
             </li>
           </ul>
         </div>
-
-
       <% else %>
         <div id="logInForm" class="hide">
           <%= form_for(:user, :as => :user, :url => session_path(:user), :html => {:class => "new_user"}) do |f| %>
@@ -58,7 +53,6 @@
           <li><%= link_to 'Register', new_user_registration_path, class: "logInGroup" %></li>
         </ul>
       <% end %>
-
     </div>
   </div>
   </div>
