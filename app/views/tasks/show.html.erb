@@ -1,14 +1,60 @@
+<div class='col-md-10 col-md-offset-1 yieldcontent'>
+  <div class="row">
 
-<%= @task.title %><br />
-<%= @task.description %><br />
-<%= @task.owners %><br />
-Owners:
-  <% @task.owners.each do |owner| %>
-    <%= owner %>
-  <% end %><br />
+    <div class="col-xs-12">
 
-<%= link_to 'Edit', edit_task_path %>
-<br>
-<%= link_to 'Home', tasks_path %>
-<br>
-<%= link_to 'Share', task_share_path %>
+      <div class="jumbotron jumboart text-center">
+        <h2 class="welcome">TASK #<%= @task.id %>:</h2>
+      </div>
+
+      <div class="panel panel-default panel-wrapper">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <div class="row">
+              <div class="col-xs-8">
+                <strong>
+                  <h3 class="panel-title"><%= @task.title %></h3>
+                </strong>
+              </div>
+              <div class="col-xs-4 text-right">
+                <h3 class="panel-title">
+                  <span>
+                    <%= link_to edit_task_path, class: "btn btn-warning btn-xs" do %>
+                      <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+                    <% end %>
+                  </span>
+                  <span>
+                    <%= link_to task_path, method: :delete, class: "btn btn-danger btn-xs" do %>
+                      <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                    <% end %>
+                  </span>
+                </h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="panel-body panel-body-full">
+            <%= @task.description %>
+          </div>
+
+          <div class="panel-footer">
+            <div class="row">
+              <div class="col-xs-10">
+                <% @task.owners.each do |owner| %>
+                  <span class="glyphicon glyphicon-user" aria-hidden="true"><span class="owner-email"> <%= owner %></span></span>
+                <% end %>
+              </div>
+              <div class="col-xs-2 text-right">
+                <span>
+                  <%= link_to task_share_path, class: "btn btn-info btn-xs" do %>
+                    share&nbsp;<span class="glyphicon glyphicon-share" aria-hidden="true"></span>
+                  <% end %>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

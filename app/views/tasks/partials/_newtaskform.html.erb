@@ -1,0 +1,23 @@
+<%= form_for :task, url: tasks_path, :html => {:id => "newTaskForm", :class => "app-form"} do |f| %>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">Title</div>
+          <%= f.text_field :title, class: "form-control" %>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="input-group">
+          <div class="input-group-addon">Description</div>
+          <%= f.text_area :description, class: "form-control" %>
+        </div>
+      </div>
+
+    <div class="">
+        <%= f.submit "CREATE", class: "btn btn-default" %>
+    </div>
+    </div>
+  </div>
+<% end %>

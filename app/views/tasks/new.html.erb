@@ -1,17 +1,12 @@
-<h3>Add new Task!</h3>
-
-<%= form_for :task, url: tasks_path do |f| %>
-  <p>
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
-  </p>
-
-  <p>
-    <%= f.label :description %><br>
-    <%= f.text_area :description %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<div class='col-md-10 col-md-offset-1 yieldcontent'>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="jumbotron jumboart text-center">
+        <h2 class="welcome">NEW TASK:</h2>
+      </div>
+      <div class="app-form-pad">
+        <%= render 'tasks/partials/newtaskform' %>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,44 @@
-// Place all the styles related to the tasks controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#userTasksPad, .user-tasks-pad {
+  margin-top: 20px;
+}
+
+
+.panel.panel-default.panel-wrapper {
+  padding: 15px;
+}
+
+.panel.panel-default.panel-wrapper .panel {
+  margin-bottom: 0;
+}
+
+.panel.panel-default.panel-wrapper h3 {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.panel.panel-default.panel-wrapper .owner-email {
+  margin-right: 15px;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.panel.panel-default.panel-wrapper .panel-heading {
+  background-color: #DCDCDC;
+}
+
+a .panel-body, a .panel-body:hover {
+  box-sizing: border-box;
+  border: 1px solid transparent;
+  color: black;
+  max-height: 52px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.panel-body.panel-body-full {
+  height: auto;
+  max-height: 100%;
+}
+
+a .panel-body:hover {
+  border: 1px solid #fc9200;
+}

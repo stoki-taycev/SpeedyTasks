@@ -1,0 +1,112 @@
+.jumboart {
+  height: 120px;
+  padding-top: 48px !important;
+  margin-bottom: 0 !important;
+  border-radius: 0 0 0 0 !important;
+}
+
+
+.jumboart h2, .jumboart h5 {
+  text-decoration: none;
+  margin: 0 0 0 0;
+}
+
+.jumboart h2.welcome, .jumboart h2.welcome:hover {
+  color: #fc9200 !important;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3) !important;
+  font-weight: bold !important;
+  transition: color 0.3s !important;
+  cursor: default !important;
+}
+
+.jumboart h2, .jumboart h2.welcome, .jumboart h2.welcome:hover {
+  color: #fc9200;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.jumboart h2:hover {
+  text-decoration: none;
+  text-shadow: 0 0 3px #960004 !important;
+  transition: text-shadow 0.5s;
+  color: #fc9200;
+  cursor: pointer;
+}
+
+.jumboart h5 {
+  color: #fc9200;
+  margin: 5px 0 0 0;
+}
+
+.jumboart h5:hover {
+  color: #fc9200 !important;
+  text-shadow: 0 0 1px #fc9200 !important;
+  text-decoration: none;
+  transition: text-shadow 0.5s;
+}
+
+
+
+#newTaskFormPad form {
+  display: none;
+  margin-bottom: 20px !important;
+}
+.app-form-pad form {
+  margin-bottom: 20px !important;
+}
+
+.app-form-pad, #newTaskFormPad {
+  background-color: #eeeeee;
+}
+.app-form-pad .input-group-addon, #newTaskFormPad .input-group-addon {
+  background-color: #DCDCDC;
+}
+
+.app-form-pad {
+  height: 210px;
+}
+.app-form-pad.app-form-pad-long {
+  height: 310px;
+}
+
+.app-form-pad.app-form-pad-long .btn-danger{
+  width: 100%;
+}
+
+.app-form, #editUserForm {
+  padding: 0 50px;
+}
+
+.app-form .input-group-addon {
+  font-weight: bold;
+  min-width:150px;
+  text-align: left;
+}
+
+.app-form input[type=submit] {
+  width: 100%;
+  height: 50px;
+  padding: 0 0 0 0;
+  background-color: white;
+  font-weight: bold;
+  text-align: center;
+}
+
+.app-form textarea {
+   resize: none;
+}
+
+.resetButton {
+  margin: 0 0 20px 50px !important;
+  width: 150px;
+  background-color: #960004 !important;
+  color: white !important;
+  font-weight: bold !important;
+  text-align: center !important;
+}
+
+.select-form {
+  margin-top: 12px !important;
+  padding: 0 15px !important;
+}

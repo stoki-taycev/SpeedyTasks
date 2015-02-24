@@ -1,0 +1,90 @@
+.navbar.navbar-inverse.navbar-top {
+  margin-bottom: 0;
+}
+
+.logo img {
+  height: 50px;
+}
+.logo span {
+  font-size: 18px;
+  font-weight: bold;
+  vertical-align: sub;
+
+}
+
+.new_user label {
+  margin: 7px 0 0 0 !important;
+}
+
+.submitButton {
+  margin: 11px 0 0 0 !important;
+  border: 1px solid #fc9200 !important;
+}
+
+.submitButton:hover, .submitButton:active, .submitButton:focus {
+  background-color: #fc9200;
+  border: 1px solid #fc9200 !important;
+}
+
+#userDropdown, .logInGroup {
+  color: #C4C4C4 !important;
+  transition: color 0.3s !important;
+}
+
+#userDropdown:hover,
+.logInGroup:hover {
+  color: #fc9200 !important;
+  text-shadow: 0 0 1px #fc9200 !important;
+  transition: text-shadow 0.5s !important;
+}
+
+.navbar-inverse .navbar-nav > .open > a {
+  color: #fc9200 !important;
+}
+
+.dropdown-menu a {
+  transition: color 0.3s;
+}
+.dropdown-menu a:hover {
+  color: #fc9200 !important;
+  text-shadow: 0 0 1px #fc9200 !important;
+  transition: text-shadow 0.5s !important;
+}
+
+li .popover {
+  width: 250px;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: white !important;
+}
+
+#headNav {
+  height: 35px;
+  margin-bottom: 20px;
+  background-color: #4C4C4C;
+  border-radius: 0 0 4px 4px;
+}
+
+#headNav span {
+  margin: 0 15px 0 0;
+}
+#headNav a {
+  color: #C4C4C4;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+#headNav a:hover {
+  color: #fc9200;
+  text-shadow: 0 0 1px #fc9200 !important;
+  transition: text-shadow 0.5s;
+}
+
+#headNav .col-xs-12 {
+  padding-top: 5px;
+  padding-left: 15px;
+}
+#headNav .col-xs-12 a {
+  padding-left: 15px;
+}

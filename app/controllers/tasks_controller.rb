@@ -4,6 +4,7 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    @new_task = Task.new
     @users = User.all
   end
 
@@ -21,7 +22,7 @@ class TasksController < ApplicationController
     @task.owners.push(current_user.email)
     @task.save
     @task.add_user current_user
-    redirect_to @task
+    redirect_to tasks_path
   end
 
   def edit
